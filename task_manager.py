@@ -1,4 +1,5 @@
 from datetime import datetime
+import random
 
 
 class TaskManager:
@@ -9,11 +10,11 @@ class TaskManager:
 
     def create_task(self, title, description):
         task = {
-            'id': TaskManager.currId,
+            'id': random.randint(1, 1000),
             'title': title,
             'description': description,
             'created_at': datetime.now().isoformat(),
-            'status': 'do zrobienia'
+            'status': 'to do'
         }
         self.db.add_task(task)
         TaskManager.currId += 1

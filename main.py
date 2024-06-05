@@ -6,9 +6,9 @@ def print_menu():
     print("\nMenu:")
     print("1 -> Add task ")
     print("2 -> Display tasks")
-    print("3 -> Display tasks based on status (to do; done; in progress")
+    print("3 -> Display tasks based on status (to do; done; in progress)")
     print("4 -> Edit task")
-    print("5 -> Delete tasl")
+    print("5 -> Delete task")
     print("0 -> Exit")
 
 
@@ -19,7 +19,7 @@ def get_task_details():
 
 
 def print_task(task):
-    print(task['title'] + ": " + task['description'] + ' | status: ' + task['status'])
+    print("task#" + str(task['id']) + ' ' + task['title'] + ": " + task['description'] + ' | status: ' + task['status'])
 
 
 def main():

@@ -28,12 +28,17 @@ class Database:
 
     def update_task(self, task_id, updated_task):
         for task in self.data:
-            if task['id'] == task_id:
+            if str(task['id']) == str(task_id):
                 task.update(updated_task)
                 self.save_data()
                 return True
         return False
 
     def delete_task(self, task_id):
-        self.data = [task for task in self.data if task['id'] != task_id]
-        self.save_data()
+        for task in self.data:
+            print(str(task['id']) == str(task_id))
+            if str(task['id']) == str(task_id):
+                self.data.remove(task)
+                self.save_data()
+                return True
+        return False
